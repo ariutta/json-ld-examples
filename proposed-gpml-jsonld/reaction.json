@@ -1,0 +1,8 @@
+"Reaction": {
+  "@id":"reaction1",
+  "includesInteractions": [
+    "interaction1",
+    "interaction2",
+    "interaction3"
+  ]
+}

@@ -1,0 +1,32 @@
+"ReactionConnector": {
+  "@id":"reaction-connector1",
+  "Points": [
+      {
+        "@type": "SnappedPoint",
+        "SnappedPoint": {
+          "GraphRef": "datanode2",
+          "RelX": "-1.0",
+          "RelY": "0.0"
+        }
+      }, 
+     {
+        "@type": "GraphicalPoint",
+        "GraphicalPoint": {
+          "X": "100",
+          "Y": "50"
+        }
+      },
+      {
+        "@type": "SnappedPoint",
+        "SnappedPoint": {
+          "GraphRef": "anchor1",
+          "RelX": "0.0",
+          "RelY": "0.0"
+        }
+      }
+  ],
+  "ReactionGraph": {
+    "@id": "datanode2",
+    "hasReaction": "reaction1"
+  }
+}

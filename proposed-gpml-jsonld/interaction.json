@@ -1,0 +1,39 @@
+"Interaction": {
+  "@id":"interaction1",
+  "Anchors": [
+    {
+      "@id": "anchor1",
+      "@type": "Anchor",
+      "anchorPosition": "0.4"
+    }
+  ],
+  "Points": [
+    {
+      "@type": "SnappedPoint",
+      "SnappedPoint": {
+        "GraphRef": "datanode1",
+        "RelX": "-1.0",
+        "RelY": "0.0"
+      }
+    }, 
+   {
+      "@type": "GraphicalPoint",
+      "GraphicalPoint": {
+        "X": "100",
+        "Y": "50"
+      }
+    },
+    {
+      "@type": "SnappedPoint",
+      "SnappedPoint": {
+        "GraphRef": "datanode2",
+        "RelX": "0.0",
+        "RelY": "0.0"
+      }
+    }
+  ],
+  "InteractionGraph": {
+    "@id": "datanode1",
+    "interactsWith": "datanode2"
+  }
+}
