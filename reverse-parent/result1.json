@@ -2,27 +2,27 @@
   "@context": {
     "ex": "http://example.com/vocab#",
     "name": "ex:name",
-    "parent": "ex:parent",
-    "children": {
-      "@reverse": "ex:parent"
+    "dependsOn": "ex:dependsOn",
+    "hasDependencies": {
+      "@reverse": "ex:dependsOn"
     }
   },
   "@graph": [{
     "@id": "#bart",
-    "name": "Bart",
-    "parent": {
+    "dependsOn": {
       "@id": "#homer",
       "name": "Homer"
-    }
+    },
+    "name": "Bart"
   }, {
     "@id": "#homer",
     "name": "Homer"
   }, {
     "@id": "#lisa",
-    "name": "Lisa",
-    "parent": {
+    "dependsOn": {
       "@id": "#homer",
       "name": "Homer"
-    }
+    },
+    "name": "Lisa"
   }]
 }

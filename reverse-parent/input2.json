@@ -1,0 +1,31 @@
+{
+  "@context": {
+    "ex": "http://example.com/vocab#ex",
+    "name": "ex:name",
+    "hasDependencies": "ex:hasDependencies",
+    "dependsOn": {
+      "@reverse": "ex:hasDependencies"
+    }
+  },
+  "@graph": [
+  {
+    "@id": "#bart",
+    "dependsOn": {
+      "@id": "#homer",
+      "name": "Homer"
+    },
+    "name": "Bart"
+  },
+  {
+    "@id": "#homer",
+    "name": "Homer"
+  },
+  {
+    "@id": "#lisa",
+    "dependsOn": {
+      "@id": "#homer",
+      "name": "Homer"
+    },
+    "name": "Lisa"
+  }]
+}

@@ -1,0 +1,11 @@
+{
+  "@context": {
+    "ex": "http://example.com/vocab#",
+    "name": "ex:name",
+    "dependsOn": "ex:dependsOn",
+    "hasDependencies": {
+      "@reverse": "ex:dependsOn"
+    }
+  },
+  "hasDependencies": {}
+}
