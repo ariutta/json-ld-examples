@@ -16,6 +16,7 @@
       "@container": "@list"
     },
     "ex":"http://www.example.com/",
+    "ex:IsRefedBy": { "@reverse": "gpml:GraphRef" },
     "ex:interactionGraph": {
       "@type": "@id"
     },
@@ -33,5 +34,8 @@
       "gpml:x": "xsd:integer"
     }
   },
-  "@type": "gpml:Reaction"
+  "@type": "gpml:Reaction",
+  "ex:IsRefedBy": {
+    "@type":"wp:Interaction"
+  }
 }

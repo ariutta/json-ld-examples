@@ -1,0 +1,297 @@
+{
+  "@context": {
+    "wp": "http://vocabularies.wikipathways.org/wp#",
+    "wpid": "http://wikipathways.org/index.php/Pathway:WP",
+    "gpmlFolder": "file://Users/andersriutta/Sites/pathvisiojs/test/gpml/",
+    "gpml": "http://vocabularies.wikipathways.org/gpml#",
+    "name": "http://xmlns.com/foaf/0.1/name",
+    "dcterms": "http://purl.org/dc/terms/",
+    "hMDB": "http://www.hmdb.ca/metabolites/HMDB",
+    "entrezGene": "http://www.ncbi.nlm.nih.gov/gene/",
+    "ChEBI": "http://www.ebi.ac.uk/chebi/searchId.do?chebiId=",
+    "media": "http://www.w3.org/TR/mediaont-10/",
+    "pathwayElements": {
+      "@id": "http://www.example.com/pathwayElements/",
+      "@container": "@list"
+    },
+    "ex": "http://www.example.com/",
+    "ex:interactionGraph": {
+      "@type": "@id"
+    },
+    "point": {
+      "@id": "http://www.example.com/point/",
+      "@container": "@list"
+    }
+  },
+  "gpmlFolder:edge-type-test.gpml": {
+    "@id": "gpmlFolder:edge-type-test.gpml",
+    "wp:Author": [{
+      "@id": "Khanspers"
+    }, {
+      "@id": "Pjaiswal"
+    }, {
+      "@id": "Ariutta"
+    }],
+    "pathwayElements": [{
+      "@id": "gpmlFolder:edge-type-test.gpml#substrate2",
+      "@type": "wp:Metabolite",
+      "wp:DatasourceReference": "ChEBI:9533",
+      "wp:Label": "substrate2"
+    }, {
+      "@id": "gpmlFolder:edge-type-test.gpml#product2",
+      "@type": "wp:Metabolite",
+      "wp:DatasourceReference": "ChEBI:26948",
+      "wp:Label": "product2"
+    }, {
+      "@id": "gpmlFolder:edge-type-test.gpml#catalyst",
+      "@type": "wp:GeneProduct",
+      "wp:DatasourceReference": "MaizeGDB:GRMZM2G057140",
+      "wp:Label": "catalyst"
+    }, {
+      "@id": "gpmlFolder:edge-type-test.gpml#substrate3",
+      "@type": "wp:Metabolite",
+      "wp:DatasourceReference": "ChEBI:15377",
+      "wp:Label": "substrate3"
+    }, {
+      "@id": "gpmlFolder:edge-type-test.gpml#product3",
+      "@type": "wp:Metabolite",
+      "wp:DatasourceReference": "ChEBI:26078",
+      "wp:Label": "product3"
+    }, {
+      "@id": "gpmlFolder:edge-type-test.gpml#inhibitor",
+      "@type": "wp:Metabolite",
+      "wp:Label": "inhibitor"
+    }, {
+      "@id": "gpmlFolder:edge-type-test.gpml#metabolite",
+      "@type": "wp:Metabolite",
+      "wp:Label": "metabolite"
+    }, {
+      "@id": "gpmlFolder:edge-type-test.gpml#substrate1",
+      "@type": "wp:Metabolite",
+      "wp:Label": "substrate1"
+    }, {
+      "@id": "gpmlFolder:edge-type-test.gpml#product1",
+      "@type": "wp:Metabolite",
+      "wp:Label": "product1"
+    }, {
+      "@id": "gpmlFolder:edge-type-test.gpml#substrate2ToProduct2",
+      "@type": "wp:Interaction",
+      "gpml:connectorType": "gpml:Straight",
+      "ex:interactionGraph": {
+        "@id": "gpmlFolder:edge-type-test.gpml#substrate2",
+        "@type": "wp:Activity",
+        "wp:Activity": "gpmlFolder:edge-type-test.gpml#product2",
+        "ex:reaction": "gpmlFolder:edge-type-test.gpml#Reaction1"
+      },
+      "ex:point": [{
+        "@id": "gpmlFolder:edge-type-test.gpml#substrate2ToProduct2PointA",
+        "@type": "ex:port",
+        "ex:port": {
+          "gpml:GraphRef": {
+            "@id": "gpmlFolder:edge-type-test.gpml#substrate2"
+          },
+          "gpml:relX": 0,
+          "gpml:relY": 1
+        }
+      }, {
+        "@id": "gpmlFolder:edge-type-test.gpml#substrate2ToProduct2PointB",
+        "@type": "ex:port",
+        "ex:port": {
+          "gpml:GraphRef": {
+            "@id": "gpmlFolder:edge-type-test.gpml#product2"
+          },
+          "gpml:relX": 0,
+          "gpml:relY": -1
+        }
+      }]
+    }, {
+      "@id": "gpmlFolder:edge-type-test.gpml#Reaction1",
+      "@type": "gpml:Reaction",
+      "gpml:GraphRef": {
+        "@id": "gpmlFolder:edge-type-test.gpml#substrate2ToProduct2"
+      },
+      "gpml:anchorPosition": 0.4
+    }, {
+      "@id": "gpmlFolder:edge-type-test.gpml#Reaction2",
+      "@type": "gpml:Reaction",
+      "gpml:GraphRef": {
+        "@id": "gpmlFolder:edge-type-test.gpml#catalystToReaction1"
+      },
+      "gpml:anchorPosition": 0.15
+    }, {
+      "@id": "gpmlFolder:edge-type-test.gpml#catalystToReaction1",
+      "@type": "wp:Interaction",
+      "gpml:connectorType": "gpml:Straight",
+      "ex:interactionGraph": {
+        "@id": "gpmlFolder:edge-type-test.gpml#catalyst",
+        "@type": "wp:Catalysis",
+        "wp:Catalysis": "gpmlFolder:edge-type-test.gpml#Reaction1"
+      },
+      "ex:point": [{
+        "@id": "gpmlFolder:edge-type-test.gpml#catalystToReaction1A",
+        "@type": "ex:port",
+        "ex:port": {
+          "gpml:GraphRef": {
+            "@id": "gpmlFolder:edge-type-test.gpml#catalyst"
+          },
+          "gpml:relX": 1,
+          "gpml:relY": 0
+        }
+      }, {
+        "@id": "gpmlFolder:edge-type-test.gpml#catalystToReaction1B",
+        "@type": "ex:port",
+        "ex:port": {
+          "gpml:GraphRef": {
+            "@id": "gpmlFolder:edge-type-test.gpml#Reaction1"
+          },
+          "gpml:relX": 0,
+          "gpml:relY": 0
+        }
+      }]
+    }, {
+      "@id": "gpmlFolder:edge-type-test.gpml#substrate3ToProduct3",
+      "@type": "wp:Interaction",
+      "gpml:connectorType": "gpml:Segmented",
+      "ex:interactionGraph": {
+        "@id": "gpmlFolder:edge-type-test.gpml#substrate3",
+        "@type": "wp:Activity",
+        "wp:Activity": "gpmlFolder:edge-type-test.gpml#product3",
+        "ex:reaction": "gpmlFolder:edge-type-test.gpml#Reaction1"
+      },
+      "ex:point": [{
+        "@id": "gpmlFolder:edge-type-test.gpml#substrate3ToProduct3PointA",
+        "@type": "ex:port",
+        "ex:port": {
+          "gpml:GraphRef": {
+            "@id": "gpmlFolder:edge-type-test.gpml#substrate3"
+          },
+          "gpml:relX": -1,
+          "gpml:relY": 0
+        }
+      }, {
+        "@id": "gpmlFolder:edge-type-test.gpml#substrate3ToProduct3PointB",
+        "@type": "ex:port",
+        "ex:port": {
+          "gpml:GraphRef": {
+            "@id": "gpmlFolder:edge-type-test.gpml#Reaction1"
+          },
+          "gpml:relX": 0,
+          "gpml:relY": 0
+        }
+      }, {
+        "@id": "gpmlFolder:edge-type-test.gpml#substrate3ToProduct3PointC",
+        "@type": "ex:port",
+        "ex:port": {
+          "gpml:GraphRef": {
+            "@id": "gpmlFolder:edge-type-test.gpml#product3"
+          },
+          "gpml:relX": -1,
+          "gpml:relY": 0
+        }
+      }]
+    }, {
+      "@id": "gpmlFolder:edge-type-test.gpml#inhibitorOnCatalysis",
+      "@type": "wp:Interaction",
+      "gpml:connectorType": "gpml:Elbow",
+      "ex:interactionGraph": {
+        "@id": "gpmlFolder:edge-type-test.gpml#inhibitor",
+        "@type": "wp:InhibitoryActivity",
+        "wp:InhibitoryActivity": "gpmlFolder:edge-type-test.gpml#catalystToReaction1"
+      },
+      "ex:point": [{
+        "@id": "gpmlFolder:edge-type-test.gpml#inhibitorOnCatalysisPointA",
+        "@type": "ex:port",
+        "ex:port": {
+          "gpml:GraphRef": {
+            "@id": "gpmlFolder:edge-type-test.gpml#inhibitor"
+          },
+          "gpml:relX": 1,
+          "gpml:relY": 0
+        }
+      }, {
+        "@id": "gpmlFolder:edge-type-test.gpml#inhibitorOnCatalysisPointB",
+        "@type": "ex:graphicalPoint",
+        "ex:graphicalPoint": {
+          "gpml:x": 715,
+          "gpml:y": 148
+        }
+      }, {
+        "@id": "gpmlFolder:edge-type-test.gpml#inhibitorOnCatalysisPointC",
+        "@type": "ex:graphicalPoint",
+        "ex:graphicalPoint": {
+          "gpml:x": 626,
+          "gpml:y": 115
+        }
+      }, {
+        "@id": "gpmlFolder:edge-type-test.gpml#inhibitorOnCatalysisPointD",
+        "@type": "ex:port",
+        "ex:port": {
+          "gpml:GraphRef": {
+            "@id": "gpmlFolder:edge-type-test.gpml#Reaction2"
+          },
+          "gpml:relX": 0,
+          "gpml:relY": 0
+        }
+      }]
+    }, {
+      "@id": "gpmlFolder:edge-type-test.gpml#substrate1ToProduct1",
+      "@type": "wp:Interaction",
+      "gpml:connectorType": "gpml:Segmented",
+      "gpml:point": [{
+        "@id": "gpmlFolder:edge-type-test.gpml#substrate1ToProduct1PointA",
+        "@type": "ex:port",
+        "ex:port": {
+          "gpml:GraphRef": {
+            "@id": "gpmlFolder:edge-type-test.gpml#substrate1"
+          },
+          "gpml:relX": 0,
+          "gpml:relY": 1
+        }
+      }, {
+        "@id": "gpmlFolder:edge-type-test.gpml#substrate1ToProduct1PointB",
+        "@type": "ex:graphicalPoint",
+        "ex:graphicalPoint": {
+          "gpml:x": 629,
+          "gpml:y": 409
+        }
+      }, {
+        "@id": "gpmlFolder:edge-type-test.gpml#substrate1ToProduct1PointC",
+        "@type": "ex:port",
+        "ex:port": {
+          "gpml:GraphRef": {
+            "@id": "gpmlFolder:edge-type-test.gpml#Reaction1"
+          },
+          "gpml:relX": 0,
+          "gpml:relY": 0
+        }
+      }, {
+        "@id": "gpmlFolder:edge-type-test.gpml#substrate1ToProduct1PointD",
+        "@type": "ex:graphicalPoint",
+        "ex:graphicalPoint": {
+          "gpml:x": 630,
+          "gpml:y": 598
+        }
+      }, {
+        "@id": "gpmlFolder:edge-type-test.gpml#substrate1ToProduct1PointE",
+        "@type": "ex:port",
+        "ex:port": {
+          "gpml:GraphRef": {
+            "@id": "gpmlFolder:edge-type-test.gpml#product1"
+          },
+          "gpml:relX": 0,
+          "gpml:relY": -1
+        }
+      }],
+      "ex:interactionGraph": {
+        "@id": "gpmlFolder:edge-type-test.gpml#substrate1",
+        "@type": "wp:Activity",
+        "gpml:reaction": "gpmlFolder:edge-type-test.gpml#Reaction1",
+        "wp:Activity": "gpmlFolder:edge-type-test.gpml#product1"
+      }
+    }],
+    "media:frameSize": {
+      "media:height": 50,
+      "media:width": 100
+    }
+  }
+}

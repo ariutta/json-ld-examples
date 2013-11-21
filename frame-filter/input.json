@@ -141,9 +141,14 @@
         "gpml:anchorPosition": 0.4
       },
       {
-        "@id": "gpmlFolder:edge-type-test.gpml#Reaction2",
+        "@id": "gpmlFolder:edge-type-test.gpml#Reaction1",
         "@type": "gpml:Reaction",
-        "gpml:GraphRef": "gpmlFolder:edge-type-test.gpml#catalystToReaction1",
+        "gpml:GraphRef": "gpmlFolder:edge-type-test.gpml#substrate2ToProduct2",
+        "gpml:anchorPosition": 0.4
+      },
+      {
+        "@id": "gpmlFolder:edge-type-test.gpml#Reaction3",
+        "@type": "gpml:Reaction",
         "gpml:anchorPosition": 0.15
       },
       {

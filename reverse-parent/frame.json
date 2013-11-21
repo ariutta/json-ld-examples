@@ -1,0 +1,9 @@
+{
+  "@context": {
+    "ex": "http://example.com/vocab#",
+    "name": "ex:name",
+    "parent": "ex:parent",
+    "children": { "@reverse": "ex:parent" }
+  },
+"children":{}
+}

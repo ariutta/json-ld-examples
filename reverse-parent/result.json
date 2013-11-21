@@ -1,0 +1,28 @@
+{
+  "@context": {
+    "ex": "http://example.com/vocab#",
+    "name": "ex:name",
+    "parent": "ex:parent",
+    "children": {
+      "@reverse": "ex:parent"
+    }
+  },
+  "@graph": [{
+    "@id": "#bart",
+    "name": "Bart",
+    "parent": {
+      "@id": "#homer",
+      "name": "Homer"
+    }
+  }, {
+    "@id": "#homer",
+    "name": "Homer"
+  }, {
+    "@id": "#lisa",
+    "name": "Lisa",
+    "parent": {
+      "@id": "#homer",
+      "name": "Homer"
+    }
+  }]
+}
